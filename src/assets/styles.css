@@ -1,0 +1,631 @@
+/* COLORS */
+:root {
+    --forest: #055E63;
+    --golden: #D5B98C;
+    --berry: #7F4952;
+    --darkness: #3B3838;
+    --sky: #56BAC6;
+    --clouds: #e1eced;
+}
+
+/* FONTS */
+@font-face {
+    font-family: thuluth;
+    src: url(fonts/DTHULUTH-II-1.ttf);
+}
+
+@font-face {
+    font-family: amjad;
+    src: url(fonts/Ulamjad.ttf);
+}
+
+@font-face {
+    font-family: SemiBold;
+    src: url(fonts/ExpoArabic-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: Bold;
+    src: url(fonts/ExpoArabic-Bold.otf);
+}
+
+@font-face {
+    font-family: Book;
+    src: url(fonts/ExpoArabic-Book.ttf);
+}
+
+@font-face {
+    font-family: Light;
+    src: url(fonts/ExpoArabic-Light.ttf);
+}
+
+@font-face {
+    font-family: Medium;
+    src: url(fonts/ExpoArabic-Medium.ttf);
+}
+
+/* ANIMATIONS */
+@keyframes slides-up {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px var(--forest), 0 0 8px var(--forest), 0 0 12px var(--sky), 0 0 18px var(--sky);
+    }
+
+    50% {
+        text-shadow: 0 0 8px var(--sky), 0 0 12px var(--sky), 0 0 18px var(--forest), 0 0 22px var(--forest);
+    }
+    100% {
+        text-shadow: 0 0 5px var(--forest), 0 0 8px var(--forest), 0 0 12px var(--sky), 0 0 18px var(--sky);
+    }
+}
+
+/* GLOBAL STYLING */
+h2 {
+    font-family: bold;
+    font-size: 36px;
+    color: var(--forest);
+    text-shadow: rgba(0, 0, 0, 0.3) 2px 2px 2px;
+}
+
+h2 span {
+    color: var(--darkness);
+}
+
+p {
+    font-family: book;
+    font-size: 18px;
+}
+
+h3 {
+    font-family: medium;
+    font-size: 24px;
+}
+
+h4 {
+    color: var(--forest);
+    font-family: medium;
+    font-weight: normal;
+    font-size: 45px;
+}
+
+a {
+    text-decoration: none;
+}
+
+section {
+    min-height: 100vh;
+    text-align: center;
+    direction: rtl;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+ol {
+    list-style: none;
+    text-align: right;
+    list-style-type: arabic-indic;
+}
+
+ol li {
+    text-align: justify;
+    font-family: book;
+    font-size: 20px;
+}
+
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html {
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f6f6f6;
+    background-image: url(stock/خلفية\ الأحرف.png);
+    background-repeat: repeat-y;
+    color: var(--darkness);
+}
+
+.cover {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)), url(stock/خلفية\ قرآن.jpg);
+    background-size: cover;
+    min-height: 100svh;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.cover .title {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 28px;
+    margin-bottom: 180px;
+    color: white;
+    font-family: semibold;
+}
+
+.cover h1 {
+    font-size: 60px;
+    text-align: center;
+    text-shadow: 4px 3px rgba(0, 0, 0, 0.4);
+}
+
+.cover h1 span {
+    color: var(--golden);
+}
+
+
+/* NAVIGATION BARS */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-family: book;
+    font-size: 20px;
+    margin: 20px;
+}
+
+/* DEFAULT */
+.default ul li a {
+    color: var(--forest);
+    transition: .2s ease-in-out;
+}
+
+.default ul li a:hover {
+    color: var(--golden);
+}
+
+.default .sign-in a {
+    font-family: semibold;
+    font-size: 20px;
+    border: solid 3px var(--forest);
+    border-radius: 50px;
+    padding: 12px;
+    color: var(--forest);
+    transition: .2s ease-in-out;
+}
+
+.default .sign-in a:hover {
+    color: var(--golden);
+    background-color: var(--forest);
+}
+
+.default .logo-wrapper{
+    width: 200px;
+    margin: 20px;
+    direction: rtl;
+    text-align: justify;
+    color: var(--forest);
+}
+.default .logo-wrapper p{
+    font-family: medium;
+    font-size: 9px;
+}
+.default .logo {
+    width: 100%;
+}
+
+/* SPECIAL */
+.special ul li a {
+    color: white;
+    transition: .2s ease-in-out;
+}
+
+.special ul li a:hover {
+    color: var(--golden);
+}
+
+.special .sign-in a {
+    font-family: semibold;
+    font-size: 20px;
+    border: solid 3px var(--golden);
+    border-radius: 50px;
+    padding: 12px;
+}
+
+.special .sign-in a {
+    color: white;
+    transition: .2s ease-in-out;
+}
+
+.special .sign-in a:hover {
+    color: white;
+    background-color: var(--golden);
+}
+
+.special .logo-wrapper{
+    width: 200px;
+    margin: 20px;
+    direction: rtl;
+    text-align: justify;
+    color: var(--golden);
+}
+.special .logo-wrapper p{
+    font-family: medium;
+    font-size: 9px;
+}
+.special .logo {
+    width: 100%;
+}
+
+
+
+.about-comp p {
+    font-family: book;
+    text-align: justify;
+    font-size: 20px;
+    max-width: 60ch;
+    margin: 30px;
+}
+
+.about-comp p a {
+    color: var(--golden);
+    font-weight: bold;
+    /* animation: glow 3s infinite ease-in-out; */
+}
+.about-comp p a:hover{
+    color: var(--forest);
+}
+
+
+
+.comp-terms ol li {
+    margin: 30px;
+    max-width: 40ch;
+}
+
+.comp-terms ol li::marker {
+    font-family: bold;
+    color: var(--forest);
+    font-size: 30px;
+}
+
+
+.comp-prize .board{
+    direction: rtl;
+    text-align: center;
+    background: wheat;
+}
+.comp-prize .board ul {
+    list-style: none;
+    font-family: semibold;
+    font-size: 20px;
+}
+
+.comp-prize .board ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 100px;
+    background: var(--clouds);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+
+
+.dates .date {
+    justify-self: center;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 1px 3px 15px -10px black;
+    padding: 30px 10px;
+    margin-top: 20px;
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-evenly;
+}
+
+.dates .date p {
+    font-family: book;
+    font-size: 22px;
+    text-align: center;
+}
+
+
+.sections-card{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 70%;
+}
+
+.sections .card {
+    width: 300px;
+    height: 120px;
+    perspective: 1000px;
+    align-self: center;
+    justify-self: center;
+    margin: 20px;
+}
+
+.sections .card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.999s;
+
+}
+
+.sections .card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.sections .card-inner .card-head {
+    font-family: semibold;
+    font-size: 24px;
+}
+
+.sections .card-inner .card-desc {
+    font-family: book;
+    font-size: 18px;
+    text-align: center;
+    margin: 10px;
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    box-shadow: 1px 3px 15px -10px black;
+}
+
+.card-front {
+    background-color: var(--clouds);
+    color: var(--forest);
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    justify-content: center;
+    transform: rotateY(0deg);
+}
+
+.card-back {
+    background-color: var(--forest);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    justify-content: center;
+    transform: rotateY(180deg);
+}
+
+
+
+.nominating h2 {
+    font-family: bold;
+    font-size: 36px;
+    text-align: center;
+    width: fit-content;
+    border: var(--forest) 3px solid;
+    border-radius: 50px;
+    padding: 20px 80px;
+}
+
+
+
+.nominating .buttons {
+    grid-row: 2;
+    grid-column: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 20px;
+}
+
+
+
+.nominating .buttons .girls {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 16px 45px;
+    border: 4px solid;
+    border-color: transparent;
+    font-size: 24px;
+    background-color: inherit;
+    border-radius: 100px;
+    font-family: semibold;
+    color: var(--berry);
+    box-shadow: 0 0 0 2px var(--berry);
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.nominating .buttons .girls svg {
+    position: absolute;
+    width: 24px;
+    fill: var(--berry);
+    z-index: 9;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.nominating .buttons .girls .arr-1 {
+    right: 16px;
+}
+
+.nominating .buttons .girls .arr-2 {
+    left: -25px;
+}
+
+.nominating .buttons .girls .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background-color: var(--berry);
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.nominating .buttons .girls .text {
+    position: relative;
+    z-index: 1;
+    transform: translateX(-12px);
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.nominating .buttons .girls:hover {
+    box-shadow: 0 0 0 12px transparent;
+    color: white;
+    border-radius: 12px;
+}
+
+.nominating .buttons .girls:hover .arr-1 {
+    right: -25%;
+}
+
+.nominating .buttons .girls:hover .arr-2 {
+    left: 15%;
+}
+
+.nominating .buttons .girls:hover .text {
+    transform: translateX(12px);
+}
+
+.nominating .buttons .girls:hover svg {
+    fill: white
+}
+
+.nominating .buttons .girls:active {
+    scale: 0.95;
+    box-shadow: 0 0 0 4px var(--berry);
+}
+
+.nominating .buttons .girls:hover .circle {
+    width: 220px;
+    height: 220px;
+    opacity: 1;
+}
+
+
+
+.nominating .buttons .boys {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 16px 45px;
+    border: 4px solid;
+    border-color: transparent;
+    font-size: 24px;
+    background-color: inherit;
+    border-radius: 100px;
+    font-family: semibold;
+    color: var(--sky);
+    box-shadow: 0 0 0 2px var(--sky);
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.nominating .buttons .boys svg {
+    position: absolute;
+    width: 24px;
+    fill: var(--sky);
+    z-index: 9;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.nominating .buttons .boys .arr-1 {
+    right: 16px;
+}
+
+.nominating .buttons .boys .arr-2 {
+    left: -25px;
+}
+
+.nominating .buttons .boys .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background-color: var(--sky);
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.nominating .buttons .boys .text {
+    position: relative;
+    z-index: 1;
+    transform: translateX(-12px);
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.nominating .buttons .boys:hover {
+    box-shadow: 0 0 0 12px transparent;
+    color: white;
+    border-radius: 12px;
+}
+
+.nominating .buttons .boys:hover .arr-1 {
+    right: -25%;
+}
+
+.nominating .buttons .boys:hover .arr-2 {
+    left: 15%;
+}
+
+.nominating .buttons .boys:hover .text {
+    transform: translateX(12px);
+}
+
+.nominating .buttons .boys:hover svg {
+    fill: white;
+}
+
+.nominating .buttons .boys:active {
+    scale: 0.95;
+    box-shadow: 0 0 0 4px var(--sky);
+}
+
+.nominating .buttons .boys:hover .circle {
+    width: 220px;
+    height: 220px;
+    opacity: 1;
+}
