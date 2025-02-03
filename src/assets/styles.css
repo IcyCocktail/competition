@@ -311,26 +311,31 @@ nav ul {
 }
 
 
-.comp-prize .board{
+.comp-prize table{
+    margin-top: 40px;
+    border-collapse: collapse;
+    width: 700px;
     direction: rtl;
     text-align: center;
-    background: wheat;
-}
-.comp-prize .board ul {
-    list-style: none;
-    font-family: semibold;
+    background: var(--clouds);
+    font-family: medium;
     font-size: 20px;
 }
+.comp-prize thead{
+    color: white;
+}
+.comp-prize th, td {
+    padding: 5px;
+    border: 2px solid white;
+    font-weight: normal;
+}
 
-.comp-prize .board ul li {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 100px;
-    background: var(--clouds);
-    padding: 20px;
-    margin: 20px;
-    border-radius: 10px;
+.comp-prize th{
+    background: var(--forest);
+}
+.comp-prize table td:nth-child(1){
+    background: var(--golden);
+    color: var(--forest);
 }
 
 

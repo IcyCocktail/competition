@@ -52,32 +52,52 @@ function About() {
 
                 <h2><span>جوائز</span> المسابقة:</h2>
 
-                <div className="board">
-                    <h3>الفرع الأول</h3>
-                    
-                    <ul>
-                        <li>
-                            <span className="rank">المركز الأول</span>
-                            <span className="prize">10000 ريال سعودي</span>
-                            <span className="icon"><i className="fa-solid fa-medal"></i></span>
-                        </li>
-                        <li>
-                            <span className="rank">المركز الثاني</span>
-                            <span className="prize">8000 ريال سعودي</span>
-                            <span className="icon"><i className="fa-solid fa-medal"></i></span>
-                        </li>
-                        <li>
-                            <span className="rank">المركز الثالث</span>
-                            <span className="prize">6000 ريال سعودي</span>
-                            <span className="icon"><i className="fa-solid fa-medal"></i></span>
-                        </li>
-                        <li>
-                            <span className="rank">المركز الرابع</span>
-                            <span className="prize">5000 ريال سعودي</span>
-                            <span className="icon"><i className="fa-solid fa-medal"></i></span>
-                        </li>
-                    </ul>
-                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>الفرع</th>
+                            <th>المركز الأول</th>
+                            <th>المركز الثاني</th>
+                            <th>المركز الثالث</th>
+                            <th>المركز الرابع</th>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td>الفرع الأول</td>
+                        <td>10000 ريال</td>
+                        <td>8000 ريال</td>
+                        <td>6000 ريال</td>
+                        <td>5000 ريال</td>
+                    </tr>
+                    <tr>
+                        <td>الفرع الثاني</td>
+                        <td>8000 ريال</td>
+                        <td>6000 ريال</td>
+                        <td>5000 ريال</td>
+                        <td>4000 ريال</td>
+                    </tr>
+                    <tr>
+                        <td>الفرع الثالث</td>
+                        <td>6000 ريال</td>
+                        <td>5000 ريال</td>
+                        <td>4000 ريال</td>
+                        <td>3000 ريال</td>
+                    </tr>
+                    <tr>
+                        <td>الفرع الرابع</td>
+                        <td>5000 ريال</td>
+                        <td>4000 ريال</td>
+                        <td>3000 ريال</td>
+                        <td>2500 ريال</td>
+                    </tr>
+                    <tr>
+                        <td>الفرع الخامس</td>
+                        <td>3000 ريال</td>
+                        <td>2000 ريال</td>
+                        <td>1500 ريال</td>
+                        <td>1000 ريال</td>
+                    </tr>
+                </table>
 
             </section>
 
@@ -116,8 +136,8 @@ function About() {
                     </div>
                     <div>
                         <SecCard
-                        sec='الفرع الخامس'
-                        details='حفظ جزء عم (خاص بالمستفيدين دون سن السابعة)'
+                            sec='الفرع الخامس'
+                            details='حفظ جزء عم (خاص بالمستفيدين دون سن السابعة)'
                         />
                     </div>
 
