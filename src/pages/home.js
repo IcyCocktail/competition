@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import DateCard from "../assets/dates.js"
+import Countdown from "../assets/countdown.js";
 import "../assets/styles.css";
 
 function Home() {
@@ -94,6 +95,10 @@ function Home() {
                     </button>
                 </div>
 
+                <div className="time-box-all">
+                    <h3>باقي على إغلاق الترشيح:</h3>
+                    <Countdown targetDate="2025-12-31T23:59:59" />
+                </div>
             </section>
         </>
 
