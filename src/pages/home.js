@@ -6,6 +6,8 @@ import "../assets/styles.css";
 
 function Home() {
 
+    const targetDate = new Date("2025-02-05T12:07:00").getTime();
+
     return (
         <>
 
@@ -95,10 +97,10 @@ function Home() {
                     </button>
                 </div>
 
-                <div className="time-box-all">
-                    <h3>باقي على إغلاق الترشيح:</h3>
-                    <Countdown targetDate="2025-12-31T23:59:59" />
-                </div>
+                <>
+                    <Countdown targetDate={targetDate}/>
+                </>
+
             </section>
         </>
 
