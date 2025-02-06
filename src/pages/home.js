@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import DateCard from "../assets/dates.js"
 import Countdown from "../assets/countdown.js";
 import "../assets/styles.css";
+import { motion } from 'framer-motion';
+import { fadeIn, containerVariants } from "../assets/animations.js"
 
 function Home() {
-
-    const targetDate = new Date("2025-02-05T12:07:00").getTime();
 
     return (
         <>
@@ -24,41 +24,61 @@ function Home() {
 
             <section className="dates">
 
-                <div>
-                    <DateCard
-                        day="8"
-                        month="10"
-                        year="1446"
-                        event="بداية الترشيح"
-                    />
-                </div>
+                <h2><span>التواريخ</span> المهمة</h2>
 
-                <div>
-                    <DateCard
-                        day="12"
-                        month="10"
-                        year="1446"
-                        event="نهاية الترشيح"
-                    />
-                </div>
+                <motion.div
+                variants={containerVariants}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
+                >
 
-                <div>
-                    <DateCard
-                        day="22"
-                        month="10"
-                        year="1446"
-                        event="بداية المسابقة"
-                    />
-                </div>
+                    <motion.div
+                    variants={fadeIn}
+                    >
+                        <DateCard
+                            day="8"
+                            month="10"
+                            year="1446"
+                            event="بداية الترشيح"
+                        />
+                    </motion.div>
+                    
+                    <motion.div
+                    variants={fadeIn}
+                    >
+                        <DateCard
+                            day="12"
+                            month="10"
+                            year="1446"
+                            event="نهاية الترشيح"
+                        />
+                    </motion.div>
 
-                <div>
-                    <DateCard
-                        day="17"
-                        month="11"
-                        year="1446"
-                        event="إعلان النتائج"
-                    />
-                </div>
+                    <motion.div
+                    variants={fadeIn}
+                    >
+                        <DateCard
+                            day="22"
+                            month="10"
+                            year="1446"
+                            event="بداية المسابقة"
+                        />
+                    </motion.div>
+
+                    <motion.div
+                    variants={fadeIn}
+                    >
+                        <DateCard
+                            day="17"
+                            month="11"
+                            year="1446"
+                            event="إعلان النتائج"
+                        />
+                    </motion.div>
+
+                </motion.div>
+
             </section>
 
             <section className="nominating" id="nominating">
@@ -98,7 +118,7 @@ function Home() {
                 </div>
 
                 <>
-                    <Countdown targetDate={targetDate}/>
+                    <Countdown />
                 </>
 
             </section>

@@ -57,25 +57,12 @@
     }
 }
 
-@keyframes glow {
-    0% {
-        text-shadow: 0 0 5px var(--forest), 0 0 8px var(--forest), 0 0 12px var(--sky), 0 0 18px var(--sky);
-    }
-
-    50% {
-        text-shadow: 0 0 8px var(--sky), 0 0 12px var(--sky), 0 0 18px var(--forest), 0 0 22px var(--forest);
-    }
-    100% {
-        text-shadow: 0 0 5px var(--forest), 0 0 8px var(--forest), 0 0 12px var(--sky), 0 0 18px var(--sky);
-    }
-}
-
 /* GLOBAL STYLING */
 h2 {
     font-family: bold;
     font-size: 36px;
     color: var(--forest);
-    text-shadow: rgba(0, 0, 0, 0.3) 2px 2px 2px;
+    text-shadow: rgba(0, 0, 0, 0.3) 2px 2px 4px;
 }
 
 h2 span {
@@ -287,7 +274,6 @@ nav ul {
     max-width: 60ch;
     margin: 30px;
 }
-
 .about-comp p a {
     color: var(--golden);
     font-weight: bold;
@@ -309,6 +295,7 @@ nav ul {
     color: var(--forest);
     font-size: 30px;
 }
+
 
 
 .comp-prize table{
@@ -340,7 +327,9 @@ nav ul {
 }
 
 
+.dates h2{
 
+}
 .dates .date {
     justify-self: center;
     background: white;
@@ -360,6 +349,7 @@ nav ul {
     font-size: 22px;
     text-align: center;
 }
+
 
 
 .sections-card{
@@ -433,7 +423,11 @@ nav ul {
 }
 
 
-
+.nominating{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 1fr 2fr;
+}
 .nominating h2 {
     font-family: bold;
     font-size: 36px;
@@ -442,12 +436,24 @@ nav ul {
     border: var(--forest) 3px solid;
     border-radius: 50px;
     padding: 20px 80px;
-    margin-bottom: 100px;
+    align-self: center;
+    justify-self: center;
+    text-shadow: 0px 0px 0px;
 }
 
+.nominating .countdown{
+    direction: ltr;
+    align-self: flex-start;
+    justify-self: center;
+}
+.nominating .countdown h3{
+    direction: rtl;
+    color: var(--forest);
+    margin-bottom: 20px;
+    font-size: 30px;
+    text-shadow: 3px 3px rgba(0, 0, 0, .2);
+}
 .nominating .buttons {
-    grid-row: 2;
-    grid-column: 2;
     display: flex;
     justify-content: center;
     align-items: center;
