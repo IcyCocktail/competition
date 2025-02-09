@@ -24,7 +24,7 @@ function Navbar() {
           <Link to='/'><img className="logo" src={goldLogo} alt="Logo" /></Link>
           <p>تحت إشراف المركز الوطني لتنمية القطاع غير الربحي</p>
         </div>
-        </nav>
+      </nav>
     ) : (
       <nav className="default">
         <ul>
@@ -35,7 +35,7 @@ function Navbar() {
         </ul>
 
         <div className="logo-wrapper">
-          <Link to='/'><img className="logo" src={greenLogo} alt="Logo" /></Link>
+          <Link to='/'><img className="logo" src={goldLogo} alt="Logo" /></Link>
           <p>تحت إشراف المركز الوطني لتنمية القطاع غير الربحي</p>
         </div>
       </nav>

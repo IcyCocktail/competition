@@ -182,87 +182,46 @@ nav ul {
     margin: 20px;
 }
 
-/* DEFAULT */
-.default ul li a {
-    color: var(--forest);
-    transition: .2s ease-in-out;
-}
-
-.default ul li a:hover {
-    color: var(--golden);
-}
-
-.default .sign-in a {
-    font-family: semibold;
-    font-size: 20px;
-    border: solid 3px var(--forest);
-    border-radius: 50px;
-    padding: 12px;
-    color: var(--forest);
-    transition: .2s ease-in-out;
-}
-
-.default .sign-in a:hover {
-    color: var(--golden);
-    background-color: var(--forest);
-}
-
-.default .logo-wrapper{
-    width: 200px;
-    margin: 20px;
-    direction: rtl;
-    text-align: justify;
-    color: var(--forest);
-}
-.default .logo-wrapper p{
-    font-family: medium;
-    font-size: 9px;
-}
-.default .logo {
-    width: 100%;
-}
-
-/* SPECIAL */
-.special ul li a {
+nav ul li a {
     color: white;
     transition: .2s ease-in-out;
 }
-
-.special ul li a:hover {
+nav ul li a:hover {
     color: var(--golden);
 }
 
-.special .sign-in a {
+nav .sign-in a {
     font-family: semibold;
     font-size: 20px;
     border: solid 3px var(--golden);
     border-radius: 50px;
     padding: 12px;
-}
-
-.special .sign-in a {
-    color: white;
     transition: .2s ease-in-out;
 }
-
-.special .sign-in a:hover {
+nav .sign-in a:hover {
     color: white;
     background-color: var(--golden);
 }
 
-.special .logo-wrapper{
-    width: 200px;
+nav .logo-wrapper{
+    width: 150px;
     margin: 20px;
     direction: rtl;
     text-align: justify;
     color: var(--golden);
 }
-.special .logo-wrapper p{
+nav .logo-wrapper p{
     font-family: medium;
     font-size: 9px;
+    width: 150%;
 }
-.special .logo {
+nav .logo {
     width: 100%;
+}
+
+/* DEFAULT */
+.default{
+    background-color: var(--forest);
 }
 
 
@@ -277,7 +236,6 @@ nav ul {
 .about-comp p a {
     color: var(--golden);
     font-weight: bold;
-    /* animation: glow 3s infinite ease-in-out; */
 }
 .about-comp p a:hover{
     color: var(--forest);
@@ -428,16 +386,14 @@ nav ul {
     grid-template-columns: 1fr;
     grid-template-rows: 2fr 1fr 2fr;
 }
-.nominating h2 {
-    font-family: bold;
-    font-size: 36px;
+.nominating h2{
     text-align: center;
     width: fit-content;
-    border: var(--forest) 3px solid;
-    border-radius: 50px;
+    border-radius: 100px;
     padding: 20px 80px;
     align-self: center;
     justify-self: center;
+    border: 4px solid var(--forest);
     text-shadow: 0px 0px 0px;
 }
 

@@ -4,37 +4,84 @@ import DateCard from "../assets/dates.js"
 import Countdown from "../assets/countdown.js";
 import "../assets/styles.css";
 import { motion } from 'framer-motion';
-import { fadeIn, containerVariants } from "../assets/animations.js"
+import { slideRight, slideLeft, slideUp, textReveal, containerVariants, backClr } from "../assets/animations.js"
 
 function Home() {
+
+    const text = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora harum atque porro repellendus, optio cum, quas maxime at aspernatur corrupti ad pariatur saepe recusandae exercitationem vero mollitia... ";
+    const words = text.split(" "); // Split into words
 
     return (
         <>
 
             <section className="about-comp">
 
-                <h2><span>نبذة عن </span>المسابقة:</h2>
+                <motion.div
+                    variants={containerVariants}
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{ once: true }}
+                >
+                    <motion.h2 variants={slideUp}><span>نبذة عن </span>المسابقة:</motion.h2>
+                </motion.div>
 
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora harum atque porro repellendus, optio
-                    cum,
-                    quas maxime at aspernatur corrupti ad pariatur saepe recusandae exercitationem vero mollitia, laudantium
-                    officiis ipsum unde omnis corporis. Ex iure rem doloremque minus. Quae, error itaque? Possimus error
-                    magnam... <Link to="/about">انقر لقراءة المزيد</Link></p>
+                {/* Animated Paragraph */}
+                <motion.p
+                    variants={containerVariants}
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{ once: true }}
+                    style={{ display: "flex", flexWrap: "wrap" }} // Ensure words wrap properly
+                >
+                    {words.map((word, index) => (
+                        <motion.span
+                            key={index}
+                            custom={index}
+                            variants={textReveal}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                            style={{ display: "inline-block", marginRight: "5px" }} // Allow animation
+                        >
+                            {word}
+                        </motion.span>
+                    ))}
+                    <motion.span
+                        custom={words.length}
+                        variants={textReveal}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        style={{ display: "inline-block", marginLeft: "5px" }}
+                    >
+                        <Link to="/about">انقر لقراءة المزيد</Link>
+                    </motion.span>
+                </motion.p>
+
             </section>
 
             <section className="dates">
 
-                <h2><span>التواريخ</span> المهمة</h2>
+                <motion.div
+                    variants={containerVariants}
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{ once: true }}
+                >
+                    <motion.h2
+                        variants={slideUp}
+                    ><span>التواريخ</span> المهمة</motion.h2>
+                </motion.div>
 
                 <motion.div
-                variants={containerVariants}
-                initial="initial"
-                whileInView="animate"
-                viewport={{ once: true }}
+                    variants={containerVariants}
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{ once: true }}
                 >
 
                     <motion.div
-                    variants={fadeIn}
+                        variants={slideRight}
                     >
                         <DateCard
                             day="8"
@@ -43,9 +90,9 @@ function Home() {
                             event="بداية الترشيح"
                         />
                     </motion.div>
-                    
+
                     <motion.div
-                    variants={fadeIn}
+                        variants={slideRight}
                     >
                         <DateCard
                             day="12"
@@ -56,7 +103,7 @@ function Home() {
                     </motion.div>
 
                     <motion.div
-                    variants={fadeIn}
+                        variants={slideRight}
                     >
                         <DateCard
                             day="22"
@@ -67,7 +114,7 @@ function Home() {
                     </motion.div>
 
                     <motion.div
-                    variants={fadeIn}
+                        variants={slideRight}
                     >
                         <DateCard
                             day="17"
@@ -83,10 +130,25 @@ function Home() {
 
             <section className="nominating" id="nominating">
 
-                <h2>رشِّح طلابك</h2>
+                <motion.div
+                    variants={containerVariants}
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{ once: true }}
+                >
+                    <motion.h2
+                        variants={backClr}
+                    >رشِّح طلابك</motion.h2>
+                </motion.div>
 
-                <div className="buttons">
-                    <button className="girls">
+                <motion.div className="buttons"
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{ once: true }}
+                >
+                    <motion.button className="girls"
+                    variants={slideRight}
+                    >
                         <svg viewBox="0 0 24 24" className="arr-2" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
@@ -99,9 +161,11 @@ function Home() {
                                 d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
                             </path>
                         </svg>
-                    </button>
+                    </motion.button>
 
-                    <button className="boys">
+                    <motion.button className="boys"
+                    variants={slideLeft}
+                    >
                         <svg viewBox="0 0 24 24" className="arr-2" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
@@ -114,12 +178,17 @@ function Home() {
                                 d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
                             </path>
                         </svg>
-                    </button>
-                </div>
+                    </motion.button>
+                </motion.div>
 
-                <>
+                <motion.div className="countdown"
+                variants={slideUp}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
+                >
                     <Countdown />
-                </>
+                </motion.div>
 
             </section>
         </>

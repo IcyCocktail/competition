@@ -1,4 +1,4 @@
-import { easeOut } from "framer-motion";
+import { color, easeOut } from "framer-motion";
 
 export const containerVariants = {
     initial: {},
@@ -9,7 +9,7 @@ export const containerVariants = {
     }
 };
 
-export const fadeIn = {
+export const slideRight = {
     initial: {
         opacity: 0,
         x: 100
@@ -22,3 +22,55 @@ export const fadeIn = {
         }
     },
 };
+export const slideLeft = {
+    initial: {
+        opacity: 0,
+        x: -100
+    },
+    animate: {
+        opacity: 1,
+        x: 0,
+        transition: {
+            ease: easeOut
+        }
+    },
+};
+
+export const slideUp = {
+    initial: {
+        opacity: 0,
+        y: 100
+    },
+    animate: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.8,
+            ease: easeOut
+        }
+    },
+};
+
+export const textReveal = {
+    hidden: { opacity: 0, y: 20 }, // Start with opacity 0 and positioned slightly lower
+    visible: (i) => ({
+        opacity: 1,
+        y: 0,
+        transition: { delay: i * 0.05, duration: 0.5 }, // Delay each letter slightly
+    }),
+};
+
+export const backClr = {
+    hidden: {
+        backgroundColor: "transparent",
+        color: "var(--forest)"
+    },
+    animate: {
+        backgroundColor: "var(--forest)",
+        color: "white",
+        transition: {
+            duration: 0.4,
+            ease: easeOut
+        }
+    }
+}
