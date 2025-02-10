@@ -107,20 +107,13 @@ function About() {
             <section className="comp-prize">
 
                 <motion.div
-                variants={containerVariants}
-                initial="initial"
-                whileInView="animate"
-                viewport={{ once: true }}
+                    variants={containerVariants}
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{ once: true }}
                 >
                     <motion.h2 variants={slideUp}><span>جوائز</span> المسابقة:</motion.h2>
-                </motion.div>
 
-                <motion.div
-                variants={containerVariants}
-                initial="initial"
-                whileInView="animate"
-                viewport={{ once: true }}
-                >
                     <motion.table variants={slideUp}>
                         <thead>
                             <tr>
@@ -167,6 +160,7 @@ function About() {
                             <td>1000 ريال</td>
                         </tr>
                     </motion.table>
+                    
                 </motion.div>
 
             </section>
@@ -174,19 +168,19 @@ function About() {
             <section className="sections" id="sections">
 
                 <motion.div
-                variants={containerVariants}
-                initial="initial"
-                whileInView="animate"
-                viewport={{ once: true }}
+                    variants={containerVariants}
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{ once: true }}
                 >
                     <motion.h2 variants={slideUp}><span>فروع</span> المسابقة:</motion.h2>
                 </motion.div>
 
                 <motion.div className="sections-card"
-                variants={containerVariants}
-                initial="initial"
-                whileInView="animate"
-                viewport={{ once: true }}
+                    variants={containerVariants}
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{ once: true }}
                 >
 
                     <motion.div variants={slideUp}>

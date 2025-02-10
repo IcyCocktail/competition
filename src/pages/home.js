@@ -134,7 +134,6 @@ function Home() {
                     variants={containerVariants}
                     initial="initial"
                     whileInView="animate"
-                    viewport={{ once: true }}
                 >
                     <motion.h2
                         variants={backClr}

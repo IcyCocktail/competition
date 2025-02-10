@@ -186,6 +186,7 @@ nav ul li a {
     color: white;
     transition: .2s ease-in-out;
 }
+
 nav ul li a:hover {
     color: var(--golden);
 }
@@ -198,29 +199,32 @@ nav .sign-in a {
     padding: 12px;
     transition: .2s ease-in-out;
 }
+
 nav .sign-in a:hover {
     color: white;
     background-color: var(--golden);
 }
 
-nav .logo-wrapper{
+nav .logo-wrapper {
     width: 150px;
     margin: 20px;
     direction: rtl;
     text-align: justify;
     color: var(--golden);
 }
-nav .logo-wrapper p{
+
+nav .logo-wrapper p {
     font-family: medium;
     font-size: 9px;
     width: 150%;
 }
+
 nav .logo {
     width: 100%;
 }
 
 /* DEFAULT */
-.default{
+.default {
     background-color: var(--forest);
 }
 
@@ -233,11 +237,13 @@ nav .logo {
     max-width: 60ch;
     margin: 30px;
 }
+
 .about-comp p a {
     color: var(--golden);
     font-weight: bold;
 }
-.about-comp p a:hover{
+
+.about-comp p a:hover {
     color: var(--forest);
 }
 
@@ -256,7 +262,7 @@ nav .logo {
 
 
 
-.comp-prize table{
+.comp-prize table {
     margin-top: 40px;
     border-collapse: collapse;
     min-width: 50%;
@@ -267,27 +273,30 @@ nav .logo {
     font-size: 20px;
     table-layout: fixed;
 }
-.comp-prize thead{
+
+.comp-prize thead {
     color: white;
 }
-.comp-prize th, td {
+
+.comp-prize th,
+td {
     padding: 5px;
     border: 2px solid white;
     font-weight: normal;
 }
 
-.comp-prize th{
+.comp-prize th {
     background: var(--forest);
 }
-.comp-prize table td:nth-child(1){
+
+.comp-prize table td:nth-child(1) {
     background: var(--golden);
     color: var(--berry);
 }
 
 
-.dates h2{
+.dates h2 {}
 
-}
 .dates .date {
     justify-self: center;
     background: white;
@@ -310,7 +319,7 @@ nav .logo {
 
 
 
-.sections-card{
+.sections-card {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -381,12 +390,13 @@ nav .logo {
 }
 
 
-.nominating{
+.nominating {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 2fr 1fr 2fr;
 }
-.nominating h2{
+
+.nominating h2 {
     text-align: center;
     width: fit-content;
     border-radius: 100px;
@@ -397,24 +407,27 @@ nav .logo {
     text-shadow: 0px 0px 0px;
 }
 
-.nominating .countdown{
+.nominating .countdown {
     direction: ltr;
     align-self: flex-start;
     justify-self: center;
 }
-.nominating .countdown h3{
+
+.nominating .countdown h3 {
     direction: rtl;
     color: var(--forest);
     margin-bottom: 20px;
     font-size: 30px;
     text-shadow: 3px 3px rgba(0, 0, 0, .2);
 }
+
 .nominating .buttons {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 50px;
 }
+
 .nominating .buttons .girls {
     position: relative;
     display: flex;
@@ -591,4 +604,94 @@ nav .logo {
     width: 220px;
     height: 220px;
     opacity: 1;
+}
+
+
+
+.sign-box {
+    min-height: 80svh;
+}
+
+.sign-box form {
+    background: transparent;
+    box-shadow: rgba(0, 0, 0, 0.3) 1px 2px 6px;
+    padding: 40px 70px;
+    height: 450px;
+    border-radius: 15px;
+    border: 1px solid rgb(200, 200, 200);
+    backdrop-filter: blur(10px);
+}
+
+.sign-box form h3{
+    color: white;
+    font-size: 30px;
+}
+
+.sign-box form .inputGroup {
+    font-family: book;
+    position: relative;
+    margin-top: 40px;
+}
+
+.sign-box form .inputGroup input {
+    font-size: 100%;
+    color: white;
+    padding: 14px 8px;
+    outline: none;
+    background-color: transparent;
+    width: 300px;
+    border: none;
+    border-bottom: var(--darkness) solid 2px;
+}
+
+.sign-box form .inputGroup .usenm {
+    font-size: 100%;
+    position: absolute;
+    left: 55%;
+    top: 0;
+    padding: 0.8em;
+    margin-left: 0.5em;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    color: var(--darkness);
+}
+
+.sign-box form .inputGroup .pass {
+    font-size: 100%;
+    position: absolute;
+    left: 64%;
+    top: 0;
+    padding: 0.8em;
+    margin-left: 0.5em;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    color: var(--darkness);
+}
+
+.inputGroup :is(input:focus, input:valid)~label {
+    transform: translateY(-50%) scale(.9);
+    margin: 0em;
+    margin-left: 1.3em;
+    padding: 0.4em;
+}
+
+.inputGroup :is(input:focus, input:valid) {
+    border-color: var(--forest);
+}
+
+.sign-box form button{
+    width: 100%;
+    background-color: var(--darkness);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-family: medium;
+    font-size: 16px;
+    color: white;
+    margin-top: 50px;
+    scale: 1.1;
+    transition: all .2s ease-in-out;
+}
+.sign-box form button:hover{
+    cursor: pointer;
 }

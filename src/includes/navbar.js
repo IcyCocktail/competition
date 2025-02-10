@@ -7,12 +7,13 @@ import greenLogo from "../assets/stock/الشعار باللون الأخضر.
 function Navbar() {
   const location = useLocation(); // Get current page URL
   const isHomePage = location.pathname === "/";
+  const isSignPage = location.pathname === "/signIn";
 
   return (
-    isHomePage ? (
+    isHomePage || isSignPage ? (
       <nav className="special">
         <ul>
-          <li className="sign-in"><Link to="">تسجيل الدخول</Link></li>
+          <li className="sign-in"><Link to="/signIn">تسجيل الدخول</Link></li>
           <li>
             <a href="#nominating">الترشيح</a> {/* Scroll to section */}
           </li>
@@ -28,7 +29,7 @@ function Navbar() {
     ) : (
       <nav className="default">
         <ul>
-          <li className="sign-in"><Link to="">تسجيل الدخول</Link></li>
+          <li className="sign-in"><Link to="/signIn">تسجيل الدخول</Link></li>
           <li><Link to="/#nominating">الترشيح</Link></li> {/* Link to section */}
           <li><Link to="/about">عن المسابقة</Link></li>
           <li><Link to="/">الرئيسة</Link></li>
