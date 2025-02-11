@@ -114,6 +114,49 @@ ol li {
     font-size: 20px;
 }
 
+/* RESPONSIVENESS */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 30px;
+    }
+
+    p {
+        font-size: 12px;
+    }
+
+    nav ul li a {
+        font-size: 18px;
+    }
+
+    nav .sign-in a{
+        font-size: 16px;
+    }
+
+    nav .logo-wrapper p {
+        display: none;
+    }
+
+    nav .logo-wrapper .logoSmall {
+        display: block;
+        width: 40px;
+    }
+
+    nav .logo-wrapper .logo {
+        display: none;
+    }
+}
+
+@media (width > 768px) {
+    .logoSmall{
+        display: none;
+    }
+}
+
+@media (max-width: 507px) {
+
+}
+
+
 
 
 * {
@@ -166,6 +209,9 @@ body {
 
 
 /* NAVIGATION BARS */
+.sidebar{
+    display: hidden;
+}
 nav {
     display: flex;
     justify-content: space-between;
@@ -191,7 +237,7 @@ nav ul li a:hover {
     color: var(--golden);
 }
 
-nav .sign-in a {
+nav .sign-in {
     font-family: semibold;
     font-size: 20px;
     border: solid 3px var(--golden);
@@ -206,7 +252,6 @@ nav .sign-in a:hover {
 }
 
 nav .logo-wrapper {
-    width: 150px;
     margin: 20px;
     direction: rtl;
     text-align: justify;
@@ -216,11 +261,10 @@ nav .logo-wrapper {
 nav .logo-wrapper p {
     font-family: medium;
     font-size: 9px;
-    width: 150%;
 }
 
-nav .logo {
-    width: 100%;
+nav .logo-wrapper .logo {
+    width: 195px;
 }
 
 /* DEFAULT */
@@ -294,8 +338,6 @@ td {
     color: var(--berry);
 }
 
-
-.dates h2 {}
 
 .dates .date {
     justify-self: center;
