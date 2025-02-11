@@ -280,7 +280,7 @@ nav .logo {
 
 .comp-prize th,
 td {
-    padding: 5px;
+    padding: 10px 15px;
     border: 2px solid white;
     font-weight: normal;
 }
@@ -333,6 +333,7 @@ td {
     align-self: center;
     justify-self: center;
     margin: 20px;
+    cursor: pointer;
 }
 
 .sections .card-inner {
@@ -342,6 +343,10 @@ td {
     transform-style: preserve-3d;
     transition: transform 0.999s;
 
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
 }
 
 .sections .card:hover .card-inner {
@@ -367,6 +372,7 @@ td {
     height: 100%;
     backface-visibility: hidden;
     box-shadow: 1px 3px 15px -10px black;
+    backface-visibility: hidden;
 }
 
 .card-front {
@@ -622,7 +628,7 @@ td {
     backdrop-filter: blur(10px);
 }
 
-.sign-box form h3{
+.sign-box form h3 {
     color: white;
     font-size: 30px;
 }
@@ -679,7 +685,7 @@ td {
     border-color: var(--forest);
 }
 
-.sign-box form button{
+.sign-box form button {
     width: 100%;
     background-color: var(--darkness);
     border: none;
@@ -692,6 +698,7 @@ td {
     scale: 1.1;
     transition: all .2s ease-in-out;
 }
-.sign-box form button:hover{
+
+.sign-box form button:hover {
     cursor: pointer;
 }

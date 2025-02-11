@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 
 const SecCard = ({ sec, details }) => {
+    const [isFlipped, setIsFlipped] = useState(false);
+
+    const handleFlip = () => {
+        setIsFlipped(!isFlipped);
+    };
 
     return (
-
-        <div className="card">
+        <div 
+            className={`card ${isFlipped ? "flipped" : ""}`} 
+            onClick={handleFlip} // Click to flip
+        >
             <div className="card-inner">
                 <div className="card-front">
                     <p className="card-head">{sec}</p>
@@ -14,8 +21,7 @@ const SecCard = ({ sec, details }) => {
                 </div>
             </div>
         </div>
-
-    )
-}
+    );
+};
 
 export default SecCard;
