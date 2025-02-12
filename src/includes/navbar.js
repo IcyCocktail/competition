@@ -8,10 +8,9 @@ import goldLogoS from "../assets/stock/الشعار باللون الذهبي م
 function Navbar() {
   const location = useLocation(); // Get current page URL
   const isHomePage = location.pathname === "/";
-  const isSignPage = location.pathname === "/signIn";
 
   return (
-    isHomePage || isSignPage ? (
+    isHomePage ? (
       <nav className="special">
         <ul>
           <li className="sign-in"><Link to="/signIn">تسجيل الدخول</Link></li>
