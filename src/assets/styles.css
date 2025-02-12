@@ -237,7 +237,7 @@ nav ul li a:hover {
     color: var(--golden);
 }
 
-nav .sign-in {
+nav .sign-in a{
     font-family: semibold;
     font-size: 20px;
     border: solid 3px var(--golden);
@@ -246,7 +246,7 @@ nav .sign-in {
     transition: .2s ease-in-out;
 }
 
-nav .sign-in a:hover {
+nav .sign-in a:hover{
     color: white;
     background-color: var(--golden);
 }
