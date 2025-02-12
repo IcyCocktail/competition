@@ -23,7 +23,7 @@ const Countdown = () => {
   return (
     <div className="countdown">
       <h3 style={{ color: isOver ? "var(--berry)" : "var(--forest)" }}>
-        {isOver ? "انتهى وقت الترشيح!" : "بـــــاقـي عــــلــــى إغلاق الـــــترشيـــح:"}
+        {isOver ? "انتهى وقت الترشيح!" : "باقي على إغلاق الترشيح:"}
       </h3>
       <FlipClockCountdown
         to={targetTime}
