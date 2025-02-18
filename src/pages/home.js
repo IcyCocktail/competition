@@ -4,60 +4,72 @@ import DateCard from "../assets/dates.js"
 import Countdown from "../assets/countdown.js";
 import "../assets/styles.css";
 import { motion } from 'framer-motion';
-import { slideRight, slideLeft, slideUp, textReveal, containerVariants, backClr } from "../assets/animations.js"
+import { slideRight, slideLeft, slideUp, textReveal, containerVariants, backClr, lineVariants } from "../assets/animations.js"
 
 function Home() {
-
-    const text = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora harum atque porro repellendus, optio cum, quas maxime at aspernatur corrupti ad pariatur saepe recusandae exercitationem vero mollitia... ";
-    const words = text.split(" "); // Split into words
+    const text = [
+        "الحمد لله وحده، والصلاة والسلام على من لا نبي بعده، أما بعد:",
+        "فإن جمعية المركز الخيري لتعليم القران الكريم وعلومه ممثلةً بإدارة الشؤون التعليمية، تتشرف",
+        "بإقامة المسابقاتِ القرآنيةَ للجهات التابعة لها، وتدعمها خدمة لكتاب الله..."
+    ]; // Keep text as an array of lines instead of splitting from a string
 
     return (
         <>
-
             <section className="about-comp">
-
                 <motion.div
                     variants={containerVariants}
                     initial="initial"
                     whileInView="animate"
                     viewport={{ once: true }}
                 >
-                    <motion.h2 variants={slideUp}><span>نبذة عن </span>المسابقة:</motion.h2>
+                    <motion.h2 variants={slideUp}>
+                        <span>نبذة عن </span>المسابقة:
+                    </motion.h2>
                 </motion.div>
 
-                {/* Animated Paragraph */}
+                {/* Animated Paragraph with Line Breaks */}
                 <motion.p
                     variants={containerVariants}
                     initial="initial"
                     whileInView="animate"
                     viewport={{ once: true }}
-                    style={{ display: "flex", flexWrap: "wrap" }} // Ensure words wrap properly
+                    style={{ display: "flex", flexDirection: "column", gap: "10px" }} // Ensure proper spacing
                 >
-                    {words.map((word, index) => (
-                        <motion.span
-                            key={index}
-                            custom={index}
-                            variants={textReveal}
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true }}
-                            style={{ display: "inline-block", marginRight: "5px" }} // Allow animation
-                        >
-                            {word}
-                        </motion.span>
-                    ))}
-                    <motion.span
-                        custom={words.length}
-                        variants={textReveal}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true }}
-                        style={{ display: "inline-block", marginLeft: "5px" }}
-                    >
-                        <Link to="/about">انقر لقراءة المزيد</Link>
-                    </motion.span>
-                </motion.p>
+                    {text.map((line, lineIndex) => {
+                        const words = line.split(" ");
+                        return (
+                            <div key={lineIndex} style={{ display: "flex", flexWrap: "wrap" }}>
+                                {words.map((word, wordIndex) => (
+                                    <motion.span
+                                        key={`${lineIndex}-${wordIndex}`}
+                                        custom={wordIndex + lineIndex * words.length} // Ensure sequential animation
+                                        variants={textReveal}
+                                        initial="hidden"
+                                        whileInView="visible"
+                                        viewport={{ once: true }}
+                                        style={{ display: "inline-block", marginRight: "5px" }}
+                                    >
+                                        {word}
+                                    </motion.span>
+                                ))}
 
+                                {/* Append the link at the end of the 3rd line */}
+                                {lineIndex === 2 && (
+                                    <motion.span
+                                        custom={words.length + lineIndex * words.length} // Delay link animation
+                                        variants={textReveal}
+                                        initial="hidden"
+                                        whileInView="visible"
+                                        viewport={{ once: true }}
+                                        style={{ display: "inline-block", marginLeft: "5px"}}
+                                    >
+                                        <Link to="/about">انقر لقراءة المزيد</Link>
+                                    </motion.span>
+                                )}
+                            </div>
+                        );
+                    })}
+                </motion.p>
             </section>
 
             <section className="dates">
@@ -146,7 +158,7 @@ function Home() {
                     viewport={{ once: true }}
                 >
                     <motion.button className="girls"
-                    variants={slideRight}
+                        variants={slideRight}
                     >
                         <svg viewBox="0 0 24 24" className="arr-2" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -163,7 +175,7 @@ function Home() {
                     </motion.button>
 
                     <motion.button className="boys"
-                    variants={slideLeft}
+                        variants={slideLeft}
                     >
                         <svg viewBox="0 0 24 24" className="arr-2" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -181,10 +193,10 @@ function Home() {
                 </motion.div>
 
                 <motion.div className="countdown"
-                variants={slideUp}
-                initial="initial"
-                whileInView="animate"
-                viewport={{ once: true }}
+                    variants={slideUp}
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{ once: true }}
                 >
                     <Countdown />
                 </motion.div>

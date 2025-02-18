@@ -5,46 +5,65 @@ import SecCard from "../assets/section-cards";
 import { motion } from 'framer-motion';
 import { slideRight, slideLeft, slideUp, textReveal, containerVariants, backClr } from "../assets/animations.js"
 
-const text = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora harum atque porro repellendus, optio cum, quas maxime at aspernatur corrupti ad pariatur saepe recusandae exercitationem vero mollitia, laudantium officiis ipsum unde omnis corporis. Ex iure rem doloremque minus. Quae, error itaque? Possimus error magnam ducimus beatae, sint in neque placeat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident autem enim ex sunt harum illo obcaecati molestiae reiciendis ipsam quisquam, nostrum cupiditate in, velit rem laboriosam explicabo repellendus debitis sit! Eaque ea velit modi rerum voluptatum consequatur, fugit sit! Rem esse quis atque labore delectus ipsum cum mollitia, non error? ";
-const words = text.split(" "); // Split into words
 function About() {
+    const text = [
+        "الحمد لله وحده، والصلاة والسلام على من لا نبي بعده، أما بعد:",
+        "فإن جمعية المركز الخيري لتعليم القران الكريم وعلومه ممثلةً بإدارة الشؤون التعليمية، تتشرف",
+        "بإقامة المسابقاتِ القرآنيةَ للجهات التابعة لها، وتدعمها خدمة لكتاب الله  وعناية به وتعزيز مكانته",
+        "في نفوس الناشئة فتقيم المسابقات السنوية لحفظ القرآن الكريم وتلاوته وتفسيره للبنين",
+        "والبنات. وهذه المسابقة القرآنية التي تقيمها الجمعية تهدف من خلالها إلى تشجيع النشء",
+        "على حفظ كتاب الله، وإتقان تلاوته وفهم معانيه، وذلك في إطار أجواء روحانية وتنافسية محفزة،",
+        "كما أنها تشجع على ختم حفظ كتاب الله وذلك بتسلسل فروعها، وتهيئة المشاركين للمشاركة",
+        "في مسابقات أعلى محلية ودولية. وقد شكلت إدارة الشؤون التعليمية لجاناً إشرافية للمسابقة،",
+        "مع بقاء الدور الأساس لمديري ومديرات الجهات التعليمية والمشرفين والمشرفات والمعلمين",
+        "والمعلمات في تفعيل المسابقة بين المستفيدين من الرجال والنساء، إلى جانب تشكيل فرق",
+        "للتحكيم من المختصين والمختصات، وإجراء عمليات الفرز والتحكيم وفق ضوابط ومعايير موضوعية",
+        "ومحددة."
+    ];
 
     return (
         <>
 
-            <section className="about-comp" id="about1">
-
+            <section className="about-comp">
                 <motion.div
                     variants={containerVariants}
                     initial="initial"
                     whileInView="animate"
                     viewport={{ once: true }}
                 >
-                    <motion.h2 variants={slideUp}><span>نبذة عن </span>المسابقة:</motion.h2>
+                    <motion.h2 variants={slideUp}>
+                        <span>نبذة عن </span>المسابقة:
+                    </motion.h2>
                 </motion.div>
 
-                {/* Animated Paragraph */}
+                {/* Animated Paragraph with Line Breaks */}
                 <motion.p
                     variants={containerVariants}
                     initial="initial"
                     whileInView="animate"
                     viewport={{ once: true }}
-                    style={{ display: "flex", flexWrap: "wrap" }} // Ensure words wrap properly
+                    style={{ display: "flex", flexDirection: "column", gap: "10px" }} // Ensure proper spacing
                 >
-                    {words.map((word, index) => (
-                        <motion.span
-                            key={index}
-                            custom={index}
-                            variants={textReveal}
-                            initial="hidden"
-                            whileInView="visible"
-                            transition={{ duration: 0.5 }}
-                            viewport={{ once: true }}
-                            style={{ display: "inline-block", marginRight: "5px" }} // Allow animation
-                        >
-                            {word}
-                        </motion.span>
-                    ))}
+                    {text.map((line, lineIndex) => {
+                        const words = line.split(" ");
+                        return (
+                            <div key={lineIndex} style={{ display: "flex", flexWrap: "wrap" }}>
+                                {words.map((word, wordIndex) => (
+                                    <motion.span
+                                        key={`${lineIndex}-${wordIndex}`}
+                                        custom={wordIndex + lineIndex * words.length} // Ensure sequential animation
+                                        variants={textReveal}
+                                        initial="hidden"
+                                        whileInView="visible"
+                                        viewport={{ once: true }}
+                                        style={{ display: "inline-block", marginRight: "5px" }}
+                                    >
+                                        {word}
+                                    </motion.span>
+                                ))}
+                            </div>
+                        );
+                    })}
                 </motion.p>
             </section>
 
@@ -160,7 +179,7 @@ function About() {
                             <td>1000 ريال</td>
                         </tr>
                     </motion.table>
-                    
+
                 </motion.div>
 
             </section>

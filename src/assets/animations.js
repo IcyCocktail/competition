@@ -74,3 +74,15 @@ export const backClr = {
         }
     }
 }
+
+export const lineVariants = {
+    hidden: { width: "0%" }, // Start with zero width
+    visible: (i) => ({
+        width: "100%", // Expand to full width
+        transition: {
+            duration: 1.2,
+            ease: "easeOut",
+            delay: i * 0.5, // Stagger effect for each line
+        },
+    }),
+};
