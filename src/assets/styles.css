@@ -58,6 +58,9 @@
 }
 
 /* GLOBAL STYLING */
+h1{
+    font-size: 60px;
+}
 h2 {
     font-family: bold;
     font-size: 36px;
@@ -115,6 +118,15 @@ ol li {
 }
 
 /* RESPONSIVENESS */
+@media (max-width: 1024px) {
+    h1{
+        font-size: 42px;
+    }
+    nav ul li {
+        font-size: 17px;
+    }
+}
+
 @media (max-width: 768px) {
     h2 {
         font-size: 30px;
@@ -124,12 +136,8 @@ ol li {
         font-size: 12px;
     }
 
-    nav ul li a {
-        font-size: 18px;
-    }
-
-    nav .sign-in a{
-        font-size: 16px;
+    nav ul li {
+        font-size: 14px;
     }
 
     nav .logo-wrapper p {
@@ -147,15 +155,36 @@ ol li {
 }
 
 @media (width > 768px) {
-    .logoSmall{
+    .logoSmall {
         display: none;
     }
 }
 
-@media (max-width: 507px) {
+@media (max-width: 507px) {}
 
+@media (width < 768px) {
+    header .nav-btn {
+        display: block;
+    }
+
+    header nav {
+        position: fixed;
+        top: -100vh;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: #055E63;
+        flex-direction: column;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .responsive_nav {
+        transform: translateX(80vh);
+    }
+    hedaer .nav-close-btn {
+        
+    }
 }
-
 
 
 
@@ -198,7 +227,6 @@ body {
 }
 
 .cover h1 {
-    font-size: 60px;
     text-align: center;
     text-shadow: 4px 3px rgba(0, 0, 0, 0.4);
 }
@@ -209,9 +237,10 @@ body {
 
 
 /* NAVIGATION BARS */
-.sidebar{
+.sidebar {
     display: hidden;
 }
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -237,16 +266,15 @@ nav ul li a:hover {
     color: var(--golden);
 }
 
-nav .sign-in a{
+nav ul li:nth-child(3) a {
     font-family: semibold;
-    font-size: 20px;
     border: solid 3px var(--golden);
     border-radius: 50px;
     padding: 12px;
     transition: .2s ease-in-out;
 }
 
-nav .sign-in a:hover{
+nav ul li:nth-child(3) a:hover {
     color: white;
     background-color: var(--golden);
 }
@@ -265,6 +293,15 @@ nav .logo-wrapper p {
 
 nav .logo-wrapper .logo {
     width: 195px;
+}
+
+header .nav-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--golden);
+    font-size: 24px;
+    display: none;
 }
 
 /* DEFAULT */
@@ -669,7 +706,7 @@ td {
     backdrop-filter: blur(10px);
 }
 
-.sign-box form h3{
+.sign-box form h3 {
     color: var(--forest);
     font-size: 30px;
     font-family: bold;
@@ -731,7 +768,7 @@ td {
     border-color: var(--forest);
 }
 
-.sign-box form button{
+.sign-box form button {
     width: 100%;
     background-color: var(--darkness);
     border: none;
@@ -744,6 +781,7 @@ td {
     scale: 1.1;
     transition: all .2s ease-in-out;
 }
-.sign-box form button:hover{
+
+.sign-box form button:hover {
     cursor: pointer;
 }

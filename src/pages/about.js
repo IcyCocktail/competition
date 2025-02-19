@@ -8,29 +8,15 @@ import { slideRight, slideLeft, slideUp, textReveal, containerVariants, backClr 
 function About() {
     const text = [
         "الحمد لله وحده، والصلاة والسلام على من لا نبي بعده، أما بعد:",
-        "فإن جمعية المركز الخيري لتعليم القران الكريم وعلومه ممثلةً بإدارة الشؤون التعليمية، تتشرف",
-        "بإقامة المسابقاتِ القرآنيةَ للجهات التابعة لها، وتدعمها خدمة لكتاب الله  وعناية به وتعزيز مكانته",
-        "في نفوس الناشئة فتقيم المسابقات السنوية لحفظ القرآن الكريم وتلاوته وتفسيره للبنين",
-        "والبنات. وهذه المسابقة القرآنية التي تقيمها الجمعية تهدف من خلالها إلى تشجيع النشء",
-        "على حفظ كتاب الله، وإتقان تلاوته وفهم معانيه، وذلك في إطار أجواء روحانية وتنافسية محفزة،",
-        "كما أنها تشجع على ختم حفظ كتاب الله وذلك بتسلسل فروعها، وتهيئة المشاركين للمشاركة",
-        "في مسابقات أعلى محلية ودولية. وقد شكلت إدارة الشؤون التعليمية لجاناً إشرافية للمسابقة،",
-        "مع بقاء الدور الأساس لمديري ومديرات الجهات التعليمية والمشرفين والمشرفات والمعلمين",
-        "والمعلمات في تفعيل المسابقة بين المستفيدين من الرجال والنساء، إلى جانب تشكيل فرق",
-        "للتحكيم من المختصين والمختصات، وإجراء عمليات الفرز والتحكيم وفق ضوابط ومعايير موضوعية",
-        "ومحددة."
+        "فإن جمعية المركز الخيري لتعليم القران الكريم وعلومه ممثلةً بإدارة الشؤون التعليمية، تتشرف بإقامة المسابقاتِ القرآنيةَ للجهات التابعة لها، وتدعمها خدمة لكتاب الله وعناية به وتعزيز مكانته في نفوس الناشئة فتقيم المسابقات السنوية لحفظ القرآن الكريم وتلاوته وتفسيره للبنين والبنات. وهذه المسابقة القرآنية التي تقيمها الجمعية تهدف من خلالها إلى تشجيع النشء على حفظ كتاب الله، وإتقان تلاوته وفهم معانيه، وذلك في إطار أجواء روحانية وتنافسية محفزة، كما أنها تشجع على ختم حفظ كتاب الله وذلك بتسلسل فروعها، وتهيئة المشاركين للمشاركة في مسابقات أعلى محلية ودولية. وقد شكلت إدارة الشؤون التعليمية لجاناً إشرافية للمسابقة، مع بقاء الدور الأساس لمديري ومديرات الجهات التعليمية والمشرفين والمشرفات والمعلمين والمعلمات في تفعيل المسابقة بين المستفيدين من الرجال والنساء، إلى جانب تشكيل فرق للتحكيم من المختصين والمختصات، وإجراء عمليات الفرز والتحكيم وفق ضوابط ومعايير موضوعية ومحددة."
     ];
+
+    let wordCounter = 0; // Track the order of words globally
 
     return (
         <>
-
             <section className="about-comp">
-                <motion.div
-                    variants={containerVariants}
-                    initial="initial"
-                    whileInView="animate"
-                    viewport={{ once: true }}
-                >
+                <motion.div variants={containerVariants} initial="initial" whileInView="animate" viewport={{ once: true }} >
                     <motion.h2 variants={slideUp}>
                         <span>نبذة عن </span>المسابقة:
                     </motion.h2>
@@ -48,19 +34,22 @@ function About() {
                         const words = line.split(" ");
                         return (
                             <div key={lineIndex} style={{ display: "flex", flexWrap: "wrap" }}>
-                                {words.map((word, wordIndex) => (
-                                    <motion.span
-                                        key={`${lineIndex}-${wordIndex}`}
-                                        custom={wordIndex + lineIndex * words.length} // Ensure sequential animation
-                                        variants={textReveal}
-                                        initial="hidden"
-                                        whileInView="visible"
-                                        viewport={{ once: true }}
-                                        style={{ display: "inline-block", marginRight: "5px" }}
-                                    >
-                                        {word}
-                                    </motion.span>
-                                ))}
+                                {words.map((word, wordIndex) => {
+                                    wordCounter++; // Increment for each word globally
+                                    return (
+                                        <motion.span
+                                            key={`${lineIndex}-${wordIndex}`}
+                                            custom={wordCounter} // Ensures global sequential animation
+                                            variants={textReveal}
+                                            initial="hidden"
+                                            whileInView="visible"
+                                            viewport={{ once: true }}
+                                            style={{ display: "inline-block", marginRight: "5px" }}
+                                        >
+                                            {word}
+                                        </motion.span>
+                                    );
+                                })}
                             </div>
                         );
                     })}

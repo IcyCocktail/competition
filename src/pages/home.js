@@ -9,8 +9,7 @@ import { slideRight, slideLeft, slideUp, textReveal, containerVariants, backClr,
 function Home() {
     const text = [
         "الحمد لله وحده، والصلاة والسلام على من لا نبي بعده، أما بعد:",
-        "فإن جمعية المركز الخيري لتعليم القران الكريم وعلومه ممثلةً بإدارة الشؤون التعليمية، تتشرف",
-        "بإقامة المسابقاتِ القرآنيةَ للجهات التابعة لها، وتدعمها خدمة لكتاب الله..."
+        "فإن جمعية المركز الخيري لتعليم القران الكريم وعلومه ممثلةً بإدارة الشؤون التعليمية، تتشرف بإقامة المسابقاتِ القرآنيةَ للجهات التابعة لها، وتدعمها خدمة لكتاب الله... "
     ]; // Keep text as an array of lines instead of splitting from a string
 
     return (
@@ -54,7 +53,7 @@ function Home() {
                                 ))}
 
                                 {/* Append the link at the end of the 3rd line */}
-                                {lineIndex === 2 && (
+                                {lineIndex === 1 && (
                                     <motion.span
                                         custom={words.length + lineIndex * words.length} // Delay link animation
                                         variants={textReveal}
