@@ -803,14 +803,31 @@ td {
     h2{
         font-size: 28px;
     }
-    p{
-        font-size: 14px;
+    h4{
+        font-size: 38px;
     }
-    .about-comp p span{
+    p{
         font-size: 14px;
     }
     header nav{
         width: 100%;
+    }
+    .about-comp p span{
+        font-size: 14px;
+    }
+    .dates .date{
+        width: 300px;
+    }
+    .dates .date p{
+        font-size: 16px;
+    }
+    .nominating .countdown h3{
+        font-size: 24px;
+    }
+    .nominating .buttons .girls,
+    .nominating .buttons .boys{
+        font-size: 18px;
+        padding: 12px 30px;
     }
     .flip-clock {
         transform: scale(0.7);
