@@ -407,7 +407,7 @@ td {
 .nominating {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 2fr 1fr 2fr;
+    grid-template-rows: auto;
 }
 
 .nominating h2 {
@@ -764,7 +764,7 @@ td {
         flex-direction: column;
         background: var(--forest);
         box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.4);
-        transition: transform 0.3s ease-in-out;
+        transition: transform 1s ease-in-out;
     }
 
     header nav ul {
@@ -789,4 +789,8 @@ td {
     }
 }
 
-@media (max-width: 507px) {}
+@media (max-width: 660px) {
+    h1 {
+        font-size: 36px;
+    }
+}
