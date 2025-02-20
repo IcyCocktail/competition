@@ -760,7 +760,7 @@ td {
         width: 70%;
         display: flex;
         align-items: end;
-        justify-content: center;
+        justify-content: start;
         flex-direction: column;
         background: var(--forest);
         box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.4);
@@ -778,11 +778,11 @@ td {
         transform: translateX(80vh);
     }
 
-    header .nav-close-btn {
+    /* header .nav-close-btn {
 		position: absolute;
 		top: 2rem;
 		right: 2rem;
-    }
+    } */
 }
 
 @media (width > 768px) {
