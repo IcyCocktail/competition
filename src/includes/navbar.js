@@ -52,14 +52,13 @@ function Navbar() {
 
     ) : (
       <header>
+        
         <nav className="default" ref={navRef}>
+
           <ul>
 
             <button className="nav-btn" onClick={showNav}>
               <FaBars />
-            </button>
-            <button className="nav-btn nav-close-btn" onClick={showNav}>
-              <FaTimes />
             </button>
 
             <li className="sign-in"><Link to="/signIn">تسجيل الدخول</Link></li>
@@ -67,11 +66,17 @@ function Navbar() {
             <li><Link to="/about">عن المسابقة</Link></li>
             <li><Link to="/">الرئيسة</Link></li>
           </ul>
+
           <div className="logo-wrapper">
             <Link to='/'><img className="logo" src={goldLogo} alt="Logo" /></Link>
             <Link to='/'><img className="logoSmall" src={goldLogoS} alt="Logo" /></Link>
             <p>تحت إشراف المركز الوطني لتنمية القطاع غير الربحي</p>
           </div>
+
+          <button className="nav-btn nav-close-btn" onClick={showNav}>
+            <FaTimes />
+          </button>
+
         </nav>
 
       </header>
