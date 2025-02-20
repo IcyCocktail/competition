@@ -18,12 +18,13 @@ function Navbar() {
     isHomePage ? (
       <header>
 
-        <nav className="special" ref={navRef}>
-          <ul>
+        <button className="nav-btn" onClick={showNav}>
+          <FaBars />
+        </button>
 
-            <button className="nav-btn" onClick={showNav}>
-              <FaBars />
-            </button>
+        <nav className="special" ref={navRef}>
+
+          <ul>
             <button className="nav-btn nav-close-btn" onClick={showNav}>
               <FaTimes />
             </button>
@@ -36,13 +37,17 @@ function Navbar() {
             </li>
             <li><Link to="/about">عن المسابقة</Link></li>
             <li><Link to="/">الرئيسة</Link></li>
+
           </ul>
-          <div className="logo-wrapper">
-            <Link to='/'><img className="logo" src={goldLogo} alt="Logo" /></Link>
-            <Link to='/'><img className="logoSmall" src={goldLogoS} alt="Logo" /></Link>
-            <p>تحت إشراف المركز الوطني لتنمية القطاع غير الربحي</p>
-          </div>
+
         </nav>
+
+        <div className="logo-wrapper">
+          <Link to='/'><img className="logo" src={goldLogo} alt="Logo" /></Link>
+          <Link to='/'><img className="logoSmall" src={goldLogoS} alt="Logo" /></Link>
+          <p>تحت إشراف المركز الوطني لتنمية القطاع غير الربحي</p>
+        </div>
+
       </header>
 
     ) : (
@@ -50,7 +55,10 @@ function Navbar() {
         <nav className="default" ref={navRef}>
           <ul>
 
-            <button>
+            <button className="nav-btn" onClick={showNav}>
+              <FaBars />
+            </button>
+            <button className="nav-btn nav-close-btn" onClick={showNav}>
               <FaTimes />
             </button>
 
@@ -65,10 +73,6 @@ function Navbar() {
             <p>تحت إشراف المركز الوطني لتنمية القطاع غير الربحي</p>
           </div>
         </nav>
-
-        <button>
-          <FaBars />
-        </button>
 
       </header>
     )

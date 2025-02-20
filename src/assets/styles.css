@@ -58,9 +58,10 @@
 }
 
 /* GLOBAL STYLING */
-h1{
+h1 {
     font-size: 60px;
 }
+
 h2 {
     font-family: bold;
     font-size: 36px;
@@ -117,67 +118,6 @@ ol li {
     font-size: 20px;
 }
 
-/* RESPONSIVENESS */
-@media (max-width: 1024px) {
-    h1{
-        font-size: 42px;
-    }
-    nav ul li {
-        font-size: 17px;
-    }
-}
-
-@media (max-width: 768px) {
-    h2 {
-        font-size: 30px;
-    }
-
-    nav .logo-wrapper p {
-        display: none;
-    }
-
-    nav .logo-wrapper .logoSmall {
-        display: block;
-        width: 40px;
-    }
-
-    nav .logo-wrapper .logo {
-        display: none;
-    }
-}
-
-@media (width > 768px) {
-    .logoSmall {
-        display: none;
-    }
-}
-
-@media (max-width: 507px) {}
-
-/* @media (width < 768px) {
-    header .nav-btn {
-        display: block;
-    }
-
-    header nav {
-        position: fixed;
-        top: -100vh;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        background: #055E63;
-        flex-direction: column;
-        transition: transform 0.3s ease-in-out;
-    }
-
-    .responsive_nav {
-        transform: translateX(80vh);
-    }
-    hedaer .nav-close-btn {
-        
-    }
-} */
-
 
 
 * {
@@ -229,17 +169,13 @@ body {
 
 
 /* NAVIGATION BARS */
-.sidebar {
-    display: hidden;
-}
-
-nav {
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-nav ul {
+header nav ul {
     list-style: none;
     display: flex;
     align-items: center;
@@ -249,16 +185,16 @@ nav ul {
     margin: 20px;
 }
 
-nav ul li a {
+header nav ul li a {
     color: white;
     transition: .2s ease-in-out;
 }
 
-nav ul li a:hover {
+header nav ul li a:hover {
     color: var(--golden);
 }
 
-nav ul li:nth-child(3) a {
+header nav ul li:nth-child(3) a {
     font-family: semibold;
     border: solid 3px var(--golden);
     border-radius: 50px;
@@ -266,33 +202,34 @@ nav ul li:nth-child(3) a {
     transition: .2s ease-in-out;
 }
 
-nav ul li:nth-child(3) a:hover {
+header nav ul li:nth-child(3) a:hover {
     color: white;
     background-color: var(--golden);
 }
 
-nav .logo-wrapper {
+header .logo-wrapper {
     margin: 20px;
     direction: rtl;
     text-align: justify;
     color: var(--golden);
 }
 
-nav .logo-wrapper p {
+header .logo-wrapper p {
     font-family: medium;
     font-size: 9px;
 }
 
-nav .logo-wrapper .logo {
+header .logo-wrapper .logo {
     width: 195px;
 }
 
 header .nav-btn {
+    margin: 20px;
     background: transparent;
     border: none;
     cursor: pointer;
     color: var(--golden);
-    font-size: 24px;
+    font-size: 26px;
     display: none;
 }
 
@@ -777,3 +714,105 @@ td {
 .sign-box form button:hover {
     cursor: pointer;
 }
+
+
+
+
+
+/* RESPONSIVENESS */
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 42px;
+    }
+
+    nav ul li {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 30px;
+    }
+
+    header .logo-wrapper p {
+        display: none;
+    }
+
+    header .logo-wrapper .logoSmall {
+        display: block;
+        width: 40px;
+    }
+
+    header .logo-wrapper .logo {
+        display: none;
+    }
+
+    header .nav-btn {
+        display: block;
+    }
+
+    header nav {
+        position: fixed;
+        top: 0;
+        left: -100vh;
+        height: 100%;
+        width: 70%;
+        display: flex;
+        align-items: end;
+        justify-content: center;
+        flex-direction: column;
+        background: var(--forest);
+        box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.4);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    header nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        gap: 60px;
+    }
+
+    .responsive_nav {
+        transform: translateX(80vh);
+    }
+
+    header .nav-close-btn {
+		position: absolute;
+		top: 2rem;
+		right: 2rem;
+    }
+}
+
+@media (width > 768px) {
+    .logoSmall {
+        display: none;
+    }
+}
+
+@media (max-width: 507px) {}
+
+/* @media (width < 768px) {
+    header .nav-btn {
+        display: block;
+    }
+
+    header nav {
+        position: fixed;
+        top: -100vh;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: #055E63;
+        flex-direction: column;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .responsive_nav {
+        transform: translateX(80vh);
+    }
+    hedaer .nav-close-btn {
+        
+    }
+} */
