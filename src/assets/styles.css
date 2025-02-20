@@ -123,6 +123,7 @@ ol li {
 * {
     margin: 0px;
     padding: 0px;
+    background: rgba(238, 130, 238, 0.3);
 }
 
 html {
@@ -420,6 +421,11 @@ td {
     justify-self: center;
     border: 4px solid var(--forest);
     text-shadow: 0px 0px 0px;
+}
+
+.flip-clock {
+    max-width: 100%; /* Prevent overflow */
+    overflow: hidden;
 }
 
 .nominating .countdown {
@@ -790,8 +796,23 @@ td {
     }
 }
 
-@media (max-width: 660px) {
-    h1 {
-        font-size: 36px;
+@media (max-width: 480px) {
+    h1{
+        font-size: 32px;
+    }
+    h2{
+        font-size: 28px;
+    }
+    p{
+        font-size: 14px;
+    }
+    .about-comp p span{
+        font-size: 14px;
+    }
+    header nav{
+        width: 100%;
+    }
+    .flip-clock {
+        transform: scale(0.7);
     }
 }
