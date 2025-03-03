@@ -655,7 +655,7 @@ td {
 .sign-box form .inputGroup {
     font-family: book;
     position: relative;
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
 .sign-box form .inputGroup input {
@@ -671,10 +671,10 @@ td {
 }
 
 .sign-box form .inputGroup .usenm {
-    width: 37%;
+    width: 100%;
     font-size: 100%;
     position: absolute;
-    left: 55%;
+    left: 15%;
     top: 0;
     padding: 12.8px;
     margin-left: 8px;
@@ -684,10 +684,10 @@ td {
 }
 
 .sign-box form .inputGroup .pass {
-    width: 30%;
+    width: 100%;
     font-size: 100%;
     position: absolute;
-    left: 64%;
+    left: 22%;
     top: 0;
     padding: 12.8px;
     margin-left: 8px;
@@ -810,7 +810,7 @@ td {
         font-size: 28px;
     }
     h4{
-        font-size: 38px;
+        font-size: 24px;
     }
     p{
         font-size: 14px;
@@ -822,10 +822,10 @@ td {
         font-size: 14px;
     }
     .dates .date{
-        width: 100%;
+        width: 120%;
     }
     .dates .date p{
-        font-size: 16px;
+        font-size: 14px;
     }
     .nominating .countdown h3{
         font-size: 24px;
@@ -840,5 +840,11 @@ td {
     }
     .comp-terms ol li{
         font-size: 14px;
+    }
+    .sign-box form{
+        padding: 20px 35px;
+    }
+    .sign-box form h3{
+        font-size: 20px;
     }
 }
