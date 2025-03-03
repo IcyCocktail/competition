@@ -319,7 +319,6 @@ td {
     width: 400px;
     display: flex;
     align-items: center;
-    justify-content: center;
     justify-content: space-evenly;
 }
 
@@ -427,7 +426,8 @@ td {
 }
 
 .flip-clock {
-    max-width: 100%; /* Prevent overflow */
+    max-width: 100%;
+    /* Prevent overflow */
     overflow: hidden;
 }
 
@@ -790,7 +790,7 @@ td {
         transform: translateX(80vh);
     }
 
-    header .nav-close-btn{
+    header .nav-close-btn {
         margin: 0px;
     }
 }
@@ -803,48 +803,67 @@ td {
 
 /* Mobile */
 @media (max-width: 480px) {
-    h1{
+    h1 {
         font-size: 32px;
     }
-    h2{
+
+    h2 {
         font-size: 28px;
     }
-    h4{
+
+    h4 {
         font-size: 24px;
     }
-    p{
+
+    p {
         font-size: 14px;
     }
-    header nav{
+
+    header nav {
         width: 100%;
     }
-    .about-comp p span{
+
+    .about-comp p span {
         font-size: 14px;
     }
-    .dates .date{
-        width: 120%;
+
+    .dates .date {
+        width: 100%;
+        gap: 14px;
     }
-    .dates .date p{
+
+    .dates .date p {
         font-size: 14px;
     }
-    .nominating .countdown h3{
+
+    .nominating .countdown h3 {
         font-size: 24px;
     }
+
     .nominating .buttons .girls,
-    .nominating .buttons .boys{
+    .nominating .buttons .boys {
         font-size: 18px;
         padding: 12px 30px;
     }
+
     .flip-clock {
         transform: scale(0.7);
     }
-    .comp-terms ol li{
+
+    .countdown h3 {
+        text-shadow: 1px 1px rgba(0, 0, 0, .2);
+    }
+
+
+    .comp-terms ol li {
         font-size: 14px;
     }
-    .sign-box form{
+
+    .sign-box form {
         padding: 20px 35px;
     }
-    .sign-box form h3{
+
+    .sign-box form h3 {
         font-size: 20px;
     }
 }
