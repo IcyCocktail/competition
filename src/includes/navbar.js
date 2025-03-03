@@ -34,7 +34,7 @@ function Navbar() {
               <Link to="/signIn">تسجيل الدخول</Link>
             </li>
             <li>
-              <a href="#nominating">الترشيح</a> {/* Scroll to section */}
+              <a href="#nominating" onClick={showNav}>الترشيح</a> {/* Scroll to section */}
             </li>
             <li><Link to="/about">عن المسابقة</Link></li>
             <li><Link to="/">الرئيسة</Link></li>
@@ -67,7 +67,7 @@ function Navbar() {
           </button>
 
             <li className="sign-in"><Link to="/signIn">تسجيل الدخول</Link></li>
-            <li><Link to="/#nominating">الترشيح</Link></li> {/* Link to section */}
+            <li><a href="/#nominating" onClick={showNav}>الترشيح</a></li> {/* Link to section */}
             <li><Link to="/about">عن المسابقة</Link></li>
             <li><Link to="/">الرئيسة</Link></li>
           </ul>

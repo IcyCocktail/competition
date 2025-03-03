@@ -276,7 +276,7 @@ header .nav-btn {
 
 
 
-.comp-prize table {
+/* .comp-prize table {
     margin-top: 40px;
     border-collapse: collapse;
     min-width: 50%;
@@ -306,7 +306,38 @@ td {
 .comp-prize table td:nth-child(1) {
     background: var(--golden);
     color: var(--berry);
+} */
+
+.comp-prize .branches-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
 }
+
+.comp-prize .branch {
+    background: #f8f8f8;
+    padding: 15px;
+    border-radius: 10px;
+    min-width: 250px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.comp-prize .prizes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.comp-prize .prize {
+    background: gold;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
 
 
 .dates .date {
@@ -765,6 +796,7 @@ td {
     }
 
     header nav {
+        z-index: 100;
         position: fixed;
         top: 0;
         left: -100vh;
@@ -834,6 +866,10 @@ td {
 
     .dates .date p {
         font-size: 14px;
+    }
+
+    .nominating h2 {
+        padding: 20px 30px;
     }
 
     .nominating .countdown h3 {

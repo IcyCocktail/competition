@@ -5,6 +5,7 @@ import Home from "./pages/home";
 import About from "./pages/about";
 import SignIn from "./pages/signIn";
 import "./assets/styles.css";
+import ScrollToTop from "./assets/ScrollTop";
 
 function App() {
   const location = useLocation();
@@ -20,6 +21,7 @@ function App() {
         </div>
       </div>}
       {!isHomePage && <Navbar />}
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />

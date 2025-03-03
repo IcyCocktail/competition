@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import {React, useEffect} from "react";
+import { Link , useLocation} from "react-router-dom";
 import DateCard from "../assets/dates.js"
 import Countdown from "../assets/countdown.js";
 import "../assets/styles.css";
@@ -7,6 +7,17 @@ import { motion } from 'framer-motion';
 import { slideRight, slideLeft, slideUp, textReveal, containerVariants, backClr, lineVariants } from "../assets/animations.js"
 
 function Home() {
+    const location = useLocation();
+
+    useEffect(() => {
+        if (location.hash) {
+            const target = document.getElementById(location.hash.substring(1));
+            if (target) {
+                target.scrollIntoView({ behavior: "smooth" });
+            }
+        }
+    }, [location]);
+
     const text = [
         "الحمد لله وحده، والصلاة والسلام على من لا نبي بعده، أما بعد:",
         "فإن جمعية المركز الخيري لتعليم القران الكريم وعلومه ممثلةً بإدارة الشؤون التعليمية، تتشرف بإقامة المسابقاتِ القرآنيةَ للجهات التابعة لها، وتدعمها خدمة لكتاب الله... "
@@ -60,9 +71,9 @@ function Home() {
                                         initial="hidden"
                                         whileInView="visible"
                                         viewport={{ once: true }}
-                                        style={{ display: "inline-block", marginLeft: "5px"}}
+                                        style={{ display: "inline-block", marginLeft: "5px" }}
                                     >
-                                        <Link to="/about">انقر لقراءة المزيد</Link>
+                                        <Link to="/about#about-comp">انقر لقراءة المزيد</Link>
                                     </motion.span>
                                 )}
                             </div>

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../assets/styles.css";
 import SecCard from "../assets/section-cards";
+import Branches from "../assets/branches";
 import { motion } from 'framer-motion';
 import { slideRight, slideLeft, slideUp, textReveal, containerVariants, backClr } from "../assets/animations.js"
 
@@ -122,7 +123,7 @@ function About() {
                 >
                     <motion.h2 variants={slideUp}><span>جوائز</span> المسابقة:</motion.h2>
 
-                    <motion.table variants={slideUp}>
+                    {/* <motion.table variants={slideUp}>
                         <thead>
                             <tr>
                                 <th>الفرع</th>
@@ -167,7 +168,9 @@ function About() {
                             <td>1500 ريال</td>
                             <td>1000 ريال</td>
                         </tr>
-                    </motion.table>
+                    </motion.table> */}
+
+                    <Branches/>
 
                 </motion.div>
 
