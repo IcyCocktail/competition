@@ -95,7 +95,8 @@ a {
 }
 
 section {
-    min-height: 100vh;
+    /* min-height: 100vh; */
+    margin-top: 150px;
     text-align: center;
     direction: rtl;
     display: flex;
@@ -838,7 +839,7 @@ td {
     }
 
     .responsive_nav {
-        transform: translateX(80vh);
+        transform: translateX(80%);
     }
 
     header .nav-close-btn {
