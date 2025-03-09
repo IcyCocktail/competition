@@ -317,9 +317,8 @@ td {
     display: flex;
     width: 220px;
     gap: 20px;
-    /* justify-content: center; */
     align-items: center;
-    margin: 40px auto;
+    margin: 40px auto 0 auto;
     text-align: center;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
@@ -346,7 +345,7 @@ td {
 .dot {
     width: 10px;
     height: 10px;
-    background: var(--clouds);
+    background: var(--golden);
     border-radius: 50%;
     transition: background 0.3s;
 }
