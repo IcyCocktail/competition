@@ -15,7 +15,7 @@ function About() {
     let wordCounter = 0; // Track the order of words globally
 
     return (
-        <>
+        <body className="about-body">
             <section className="about-comp">
                 <motion.div variants={containerVariants} initial="initial" whileInView="animate" viewport={{ once: true }} >
                     <motion.h2 variants={slideUp}>
@@ -123,56 +123,9 @@ function About() {
                 >
                     <motion.h2 variants={slideUp}><span>جوائز</span> المسابقة:</motion.h2>
 
-                    {/* <motion.table variants={slideUp}>
-                        <thead>
-                            <tr>
-                                <th>الفرع</th>
-                                <th>المركز الأول</th>
-                                <th>المركز الثاني</th>
-                                <th>المركز الثالث</th>
-                                <th>المركز الرابع</th>
-                            </tr>
-                        </thead>
-                        <tr>
-                            <td>الفرع الأول</td>
-                            <td>10000 ريال</td>
-                            <td>8000 ريال</td>
-                            <td>6000 ريال</td>
-                            <td>5000 ريال</td>
-                        </tr>
-                        <tr>
-                            <td>الفرع الثاني</td>
-                            <td>8000 ريال</td>
-                            <td>6000 ريال</td>
-                            <td>5000 ريال</td>
-                            <td>4000 ريال</td>
-                        </tr>
-                        <tr>
-                            <td>الفرع الثالث</td>
-                            <td>6000 ريال</td>
-                            <td>5000 ريال</td>
-                            <td>4000 ريال</td>
-                            <td>3000 ريال</td>
-                        </tr>
-                        <tr>
-                            <td>الفرع الرابع</td>
-                            <td>5000 ريال</td>
-                            <td>4000 ريال</td>
-                            <td>3000 ريال</td>
-                            <td>2500 ريال</td>
-                        </tr>
-                        <tr>
-                            <td>الفرع الخامس</td>
-                            <td>3000 ريال</td>
-                            <td>2000 ريال</td>
-                            <td>1500 ريال</td>
-                            <td>1000 ريال</td>
-                        </tr>
-                    </motion.table> */}
-
-                    <Branches/>
-
                 </motion.div>
+
+                <Branches />
 
             </section>
 
@@ -232,7 +185,7 @@ function About() {
 
             </section>
 
-        </>
+        </body>
     )
 
 }

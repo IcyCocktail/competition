@@ -94,7 +94,20 @@ a {
     text-decoration: none;
 }
 
-section {
+.home-body section {
+    min-height: 100svh;
+    /* margin: 150px 0; */
+    text-align: center;
+    direction: rtl;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.about-body section {
     /* min-height: 100vh; */
     margin: 150px 0;
     text-align: center;
@@ -313,15 +326,18 @@ td {
     color: var(--berry);
 } */
 
+.comp-prize {
+    justify-self: center;
+}
+
 .comp-prize .branches-container {
     display: flex;
-    width: 220px;
     gap: 20px;
+    justify-content: center;
     align-items: center;
-    padding: 40px;
+    flex-wrap: wrap;
+    margin: 40px;
     text-align: center;
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
 }
 
 .comp-prize .branch {
@@ -330,12 +346,13 @@ td {
     background: #f8f8f8;
     padding: 15px;
     width: 180px;
-    padding: 10px;
+    margin: 10px;
     border-radius: 10px;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .dots {
+    visibility: hidden;
     display: flex;
     justify-content: center;
     gap: 10px;
@@ -825,6 +842,19 @@ td {
 }
 
 /* Tablets */
+@media (max-width: 800px) {
+    .comp-prize .branches-container {
+        justify-content: start;
+        flex-wrap: nowrap;
+        width: 220px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+    }
+    .dots{
+        visibility: visible;
+    }
+}
+
 @media (max-width: 768px) {
     h2 {
         font-size: 30px;

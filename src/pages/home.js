@@ -24,7 +24,7 @@ function Home() {
     ]; // Keep text as an array of lines instead of splitting from a string
 
     return (
-        <>
+        <body className="home-body">
             <section className="about-comp">
                 <motion.div
                     variants={containerVariants}
@@ -212,7 +212,7 @@ function Home() {
                 </motion.div>
 
             </section>
-        </>
+        </body>
 
     );
 };
