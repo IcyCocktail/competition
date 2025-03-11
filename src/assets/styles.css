@@ -859,6 +859,7 @@ td {
         width: 220px;
         overflow-x: auto;
         scroll-snap-type: x mandatory;
+        margin: auto;
     }
     .dots{
         visibility: visible;
