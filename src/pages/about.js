@@ -15,8 +15,9 @@ function About() {
     let wordCounter = 0; // Track the order of words globally
 
     return (
-        <body className="about-body">
-            <section className="about-comp">
+
+        <>
+            <section className="about about-comp">
                 <motion.div variants={containerVariants} initial="initial" whileInView="animate" viewport={{ once: true }} >
                     <motion.h2 variants={slideUp}>
                         <span>نبذة عن </span>المسابقة:
@@ -57,7 +58,7 @@ function About() {
                 </motion.p>
             </section>
 
-            <section className="comp-terms">
+            <section className="about comp-terms">
 
                 <motion.div
                     variants={containerVariants}
@@ -113,7 +114,7 @@ function About() {
 
             </section>
 
-            <section className="comp-prize">
+            <section className="about comp-prize">
 
                 <motion.div
                     variants={containerVariants}
@@ -129,7 +130,7 @@ function About() {
 
             </section>
 
-            <section className="sections" id="sections">
+            <section className="about sections" id="sections">
 
                 <motion.div
                     variants={containerVariants}
@@ -185,7 +186,7 @@ function About() {
 
             </section>
 
-        </body>
+        </>
     )
 
 }

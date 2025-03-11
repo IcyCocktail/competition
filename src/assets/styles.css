@@ -94,7 +94,7 @@ a {
     text-decoration: none;
 }
 
-.home-body section {
+.home {
     min-height: 100svh;
     /* margin: 150px 0; */
     text-align: center;
@@ -108,7 +108,7 @@ a {
     gap: 20px;
 }
 
-.about-body section {
+.about {
     /* min-height: 100vh; */
     margin: 150px 0;
     text-align: center;
@@ -121,7 +121,7 @@ a {
     gap: 20px;
 }
 
-.sign-body section {
+.sign-box {
     min-height: 80svh;
     /* margin: 150px 0; */
     text-align: center;

@@ -13,22 +13,22 @@ function App() {
 
   return (
     <>
-      {isHomePage && <div className="cover">
-        <Navbar />
-        <div class="title">
-          <h1>مسابقة <span>تعلَّم</span></h1>
-          <h1>لحفظ القرآن الكريم</h1>
-        </div>
-      </div>}
-      {!isHomePage && <Navbar />}
-      <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/signIn" element={<SignIn />} />
-      </Routes>
-    </>
-  );
+        {isHomePage && <div className="cover">
+          <Navbar />
+          <div class="title">
+            <h1>مسابقة <span>تعلَّم</span></h1>
+            <h1>لحفظ القرآن الكريم</h1>
+          </div>
+        </div>}
+        {!isHomePage && <Navbar />}
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/signIn" element={<SignIn />} />
+        </Routes>
+      </>
+      );
 }
 
-export default App;
+      export default App;
